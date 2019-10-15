@@ -1,0 +1,46 @@
+<Template>
+	<Head>
+
+
+<FROMHeader id="JMSDeliveryModeRq" name="JMSDeliveryMode"/>
+<FROMHeader id="jmsMessageIdRq" name="JMSMessageID"/>
+<FROMHeader id="OperationNameRq" name="OperationName"/>
+<FROMHeader id="RqUIDRq" name="RqUID"/>
+
+<MQHeader id="JMSDeliveryModeRs" name="JMSDeliveryMode" type="Integer">[%JMSDeliveryModeRq%]</MQHeader>
+<MQHeader id="OperationNameRs" name="OperationName" type="string">[%OperationNameRq%]</MQHeader>
+<MQHeader id="RqUIDRs" name="RqUID" type="string">[%RqUIDRq%]</MQHeader>
+<MQHeader id="jmsMessageIdRs" name="JMSCorrelationID" type="string">[%jmsMessageIdRq%]</MQHeader>
+<FormatDateTime id="RqTmRs">yyyy-MM-dd'T'HH:mm:ss.SSS'Z'</FormatDateTime>
+
+	</Head>
+	<Body>
+<CalcInsurancePremiumRs>
+	<RqUID>[%RqUIDRq%]</RqUID>
+	<RqTm>[%RqTmRs%]</RqTm>
+	<OperUID>OperUID</OperUID>
+	<SPName>UFS</SPName>
+	<SystemID>ASBS</SystemID>
+	<OPER_ID>OPER_ID</OPER_ID>
+	<TSMMessageId>3257EFFAEF2E11E4A93A0A6307390000</TSMMessageId>
+	<SID>UFS</SID>
+	<ApplicationStatus>1</ApplicationStatus>
+	<InsurancePremium>1230.0</InsurancePremium>
+	<InsuranceAmount>112220.0</InsuranceAmount>
+	<CreditAmount>0.0</CreditAmount>
+	<CreditCurrency>RUB</CreditCurrency>
+	<DateTime> CommonEnv.dateTime() </DateTime>
+	<ReturnCode>0</ReturnCode>
+	<Description>3257EFFAEF2E11E4A93A0A6307390000</Description>
+	<RiskList>
+		<RiskID>5</RiskID>
+		<RiskItem>Защитаблизких</RiskItem>
+		<RiskInsAdditional>false</RiskInsAdditional>
+		<RiskPremium>1520.0</RiskPremium>
+		<RiskPremiumRu>140.0</RiskPremiumRu>
+		<RiskPremiumCurrencyID>1</RiskPremiumCurrencyID>
+		<RiskPremiumCurrency>RUB</RiskPremiumCurrency>
+	</RiskList>
+</CalcInsurancePremiumRs>
+	</Body>
+</Template>
